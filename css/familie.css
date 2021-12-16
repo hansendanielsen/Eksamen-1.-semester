@@ -1,0 +1,789 @@
+/**
+ * fil: css/familie.css
+ **/
+/* Variabler: genbruges og gør designvalg enkle */
+:root {
+  /* farver */
+  --white: #EAEBED;
+  --creme: #1E1E1F;
+  --green: #7c8272;
+  --darkgreen: #5d674d;
+  --black: #151515;
+  --black2: #353435;
+  /* fonte
+  Houschka Pro Light:
+font-family: houschka-pro, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Houschka Pro Medium
+font-family: houschka-pro, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+Houschka Pro DemiBold
+font-family: houschka-pro, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+Houschka Pro Bold:
+font-family: houschka-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+  */
+}
+
+/* Her bruges en variabel: --blue */
+body {
+  background-color: var(--white);
+  margin: 0
+}
+
+* {box-sizing:border-box}
+
+/* Typografi */
+h1 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 3px;
+
+}
+
+h2 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+h3 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.linje {
+    border-bottom: 2px solid red;
+    border-color: var(--green);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.linje2 {
+    border-bottom: 1px solid red;
+    border-color: var(--white);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+/* Layout */
+
+html{
+  margin: auto;
+  scroll-behavior: smooth;
+}
+
+* {box-sizing:border-box}
+
+
+/* header */
+
+.header {
+  background-color: var(--black);
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--white);
+  text-align: center;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.header .logohead {
+  display: block;
+  float: left;
+  width: 60px;
+  padding: 0.5%;
+  margin-left: 2%;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .nav-icon {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background: var(--white);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 7px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -7px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  min-height: 350px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top:0;
+}
+
+/* main */
+
+/* Urtekram Familie */
+.familietekst h2{
+  text-align: center;
+}
+
+.familietekst h3{
+  text-align: center;
+}
+
+.familietekst a {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--black2);
+  text-align: left;
+}
+
+.konkurrence {
+  background-color: var(--creme);
+  color: var(--white);
+  padding: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.billede {
+  margin-top: 5%;
+}
+
+.konkurrence a {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--white);
+  text-align: left;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--darkgreen);
+  color: var(--white);
+  margin-top: 5%;
+}
+
+.tilmeld a{
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--white);
+  text-align: center;
+}
+
+/* MEDIA */
+
+/* COMPUTER */
+@media screen and (min-width: 1175px) {
+
+/* Folder menuen ud */
+
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header li {
+    float: left;
+
+  }
+  .header li a {
+    padding: 20px 60px;
+    font-size: 20px;
+  }
+
+  .header .menu {
+    clear: none;
+    float: left;
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+
+  #landingvertikal {
+    display: none;
+    visibility: hidden;
+  }
+
+  #landing {
+    margin-bottom: 5%;
+  }
+
+  .velkommen {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .familielogo {
+    width: 30%;
+    padding: 10% 2%;
+  }
+
+  .familietekst {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-top: 5%;
+    line-height: 1.6;
+    font-size: 125%;
+    writing-mode: horizontal-tb;
+  }
+
+  .familietekst a {
+    padding-left: 10%;
+  }
+
+  .helefam{
+    padding: 5% 25%;
+  }
+
+  .konkurrence {
+    margin: 5% 10%;
+  }
+
+  .konkurrencebillede {
+    padding: 5% 20%;
+  }
+
+  .konkurrence h2, h3, p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  h1 {
+    font-size: 55px;
+  }
+
+  .konkurrence a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .vind {
+    text-align: center;
+  }
+
+  .linje2 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .deltag {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+  .saadan {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+    padding-left: 10%;
+    margin-bottom: 5%;
+  }
+
+  .pasta {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 300px;
+    max-height: 100px;
+    margin-top: 15%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .slut {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+  }
+
+  .kontaktes {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+  }
+
+
+  .avokado {
+    padding: 5% 25%;
+  }
+
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width: 5%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 35%;
+    padding: 0% 10%;
+    font-size: 20px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* MOBIL VERTIKAL */
+@media screen and (min-width: 220px) and (max-width: 530px) {
+
+  #landing {
+    display: none;
+    visibility: hidden;
+  }
+
+  #landingvertikal {
+    margin-bottom: 5%;
+  }
+
+  .familielogo {
+    margin-top: 15%;
+  }
+
+  .velkommen {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+  }
+
+  .velkommen a {
+    display: flex;
+    justify-content: left;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .konkurrence h1, h2, h3, p {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .konkurrence a {
+    display: flex;
+    justify-content: center;
+  }
+
+  .konkurrencebillede {
+    padding: 5%;
+  }
+
+  .info {
+    font-size: 75%;
+    text-align: center;
+  }
+
+  .pasta {
+    margin: 5%;
+  }
+
+  .avokado{
+    padding: 5% 10%;
+  }
+
+  .helefam {
+    padding: 5% 10%;
+  }
+
+  footer {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+  }
+
+  .logo1 {
+    width: 15%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20%;
+    padding: 5% 10%;
+    font-size: 14px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* MOBIL HORISONTAL */
+@media screen and (min-width: 531px) and (max-width: 812px) {
+
+  #landingvertikal {
+    display: none;
+    visibility: hidden;
+  }
+
+  #landing {
+    margin-bottom: 5%;
+  }
+
+  .familielogo {
+    width: 40%;
+    display: block;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+
+  .familietekst {
+    display: block;
+    margin: 10%;
+  }
+
+  .helefam {
+    margin: 5% 15%;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  .konkurrence {
+    margin: 5% 10%;
+  }
+
+  .konkurrencebillede {
+    padding: 5% 10%;
+  }
+
+  .vind {
+    text-align: center;
+    margin: 7%;
+  }
+
+  .saadan {
+      margin: 7%;
+  }
+
+  .pasta {
+    margin: 5% 15%;
+  }
+
+  .info {
+    font-size: 75%;
+    text-align: center;
+  }
+
+  .avokado {
+    margin: 5% 15%;
+  }
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width:8%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 27%;
+    padding: 2% 10%;
+    font-size: 14px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* IPAD + */
+@media screen and (min-width: 812px) and (max-width: 1175px) {
+
+  #landingvertikal {
+    display: none;
+    visibility: hidden;
+  }
+
+  #landing {
+    margin-bottom: 5%;
+  }
+
+  .familielogo {
+    width: 30%;
+    display: block;
+    margin-right: 35%;
+    margin-left: 35%;
+    margin-top: 5%;
+  }
+
+  .familietekst {
+    display: block;
+    margin: 5% 15%;
+    font-size: 120%;
+  }
+
+  .helefam {
+    margin: 5% 15%;
+  }
+
+  h1 {
+    font-size: 45px;
+  }
+
+  .konkurrence {
+    margin: 5% 10%;
+  }
+
+  .konkurrencebillede {
+    padding: 5% 10%;
+  }
+
+  .vind {
+    text-align: center;
+    margin: 7%;
+  }
+
+  .saadan {
+      margin: 7%;
+  }
+
+  .pasta {
+    margin: 5% 15%;
+  }
+
+  .info {
+    font-size: 75%;
+    text-align: center;
+  }
+
+  .avokado {
+    margin: 5% 15%;
+  }
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width:8%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 27%;
+    padding: 2% 10%;
+    font-size: 20px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}

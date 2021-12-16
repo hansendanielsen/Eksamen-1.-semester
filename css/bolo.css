@@ -1,0 +1,742 @@
+/**
+ * fil: css/familie.css
+ **/
+/* Variabler: genbruges og gør designvalg enkle */
+:root {
+  /* farver */
+  --white: #EAEBED;
+  --green: #7c8272;
+  --darkgreen: #5d674d;
+  --black: #151515;
+  --black2: #353435;
+  --purple: #CD797D;
+  /* fonte
+  Houschka Pro Light:
+font-family: houschka-pro, sans-serif;
+font-weight: 300;
+font-style: normal;
+
+Houschka Pro Medium
+font-family: houschka-pro, sans-serif;
+font-weight: 500;
+font-style: normal;
+
+Houschka Pro DemiBold
+font-family: houschka-pro, sans-serif;
+font-weight: 600;
+font-style: normal;
+
+Houschka Pro Bold:
+font-family: houschka-pro, sans-serif;
+font-weight: 700;
+font-style: normal;
+  */
+}
+
+/* Her bruges en variabel: --blue */
+body {
+  background-color: var(--white);
+  margin: 0
+}
+
+* {box-sizing:border-box}
+
+/* Typografi */
+h1 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 3px;
+
+}
+
+h2 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+h3 {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p {
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.linje {
+    border-bottom: 1px solid red;
+    border-color: var(--purple);
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vw;
+}
+
+.linje2 {
+    border-bottom: 1px solid red;
+    border-color: var(--white);
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+/* Layout */
+
+html{
+  margin: auto;
+  scroll-behavior: smooth;
+}
+
+* {box-sizing:border-box}
+
+
+/* header */
+
+.header {
+  background-color: var(--black);
+  width: 100%;
+  z-index: 3;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--white);
+  text-align: center;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.header .logohead {
+  display: block;
+  float: left;
+  width: 60px;
+  padding: 0.5%;
+  margin-left: 2%;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .nav-icon {
+  background: var(--white);
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .nav-icon:before,
+.header .menu-icon .nav-icon:after {
+  background: var(--white);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .nav-icon:before {
+  top: 7px;
+}
+
+.header .menu-icon .nav-icon:after {
+  top: -7px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  min-height: 350px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top:0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top:0;
+}
+
+/* main */
+figcaption {
+  font-size: 16px;
+  color: var(--sort);
+  font-family: 'Poppins';
+  text-decoration: none;
+  padding-bottom: 2px;
+  margin-top: 2%;
+  line-height: 2.5;
+  text-align: center;
+  width: 100%;
+}
+
+/* footer */
+footer {
+  background-color: var(--darkgreen);
+  color: var(--white);
+  margin-top: 20px;
+}
+
+.tilmeld a{
+  font-family: houschka-pro, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--white);
+  text-align: center;
+}
+
+/* MEDIA */
+
+/* COMPUTER */
+@media screen and (min-width: 1175px) {
+
+/* Folder menuen ud */
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header li {
+    float: left;
+
+  }
+  .header li a {
+    padding: 20px 60px;
+    font-size: 20px;
+  }
+
+  .header .menu {
+    clear: none;
+    float: left;
+    max-height: none;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+
+
+  #overskrift {
+    text-align: center;
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+  .tid {
+    font-size: 14px;
+  }
+
+  .ur {
+    max-width: 35px;
+    margin-right: 2%;
+  }
+
+  #opskriften {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+  }
+
+  .forklaring {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .linsebillede {
+    background-color: var(--purple);
+    margin: 0% 25%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: 1px solid red;
+    border-color: var(--purple);
+
+  }
+
+  .bruge {
+    width: 35%;
+    padding: 1% 5%;
+    border-right: 1px solid red;
+    border-color: var(--purple);
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore {
+    width: 60%;
+    padding: 1% 15%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore p {
+    line-height: 2;
+  }
+
+  .bruge p{
+    line-height: 2;
+  }
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width: 5%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 35%;
+    padding: 0% 10%;
+    font-size: 20px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* MOBIL VERTIKAL */
+@media screen and (min-width: 220px) and (max-width: 530px) {
+
+  .overskrift {
+    font-size: 14px;
+  }
+
+  #beskrivelse {
+  padding: 2% 10%;
+  }
+
+  #overskrift {
+    text-align: center;
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+  .tid {
+    font-size: 14px;
+  }
+
+  .ur {
+    max-width: 35px;
+    margin-right: 2%;
+  }
+
+  #opskriften {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+  }
+
+  .forklaring {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .linsebillede {
+    background-color: var(--purple);
+    margin: 5%;
+    margin-top: 13%;
+    margin-bottom: 25%;
+    border: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .bruge {
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    border-color: var(--purple);
+    padding: 1% 8%;
+  }
+
+  .goore {
+    padding: 1% 8%;
+    border-bottom: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .goore p {
+    line-height:1.8;
+  }
+
+  .bruge p{
+    line-height:1.8;
+  }
+
+  footer {
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+  }
+
+  .logo1 {
+    width: 15%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 5% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 20%;
+    padding: 5% 10%;
+    font-size: 14px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* MOBIL HORISONTAL */
+@media screen and (min-width: 531px) and (max-width: 812px) {
+
+  #beskrivelse {
+  padding: 2% 10%;
+  }
+
+  #overskrift {
+    text-align: center;
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+  .tid {
+    font-size: 14px;
+  }
+
+  .ur {
+    max-width: 35px;
+    margin-right: 2%;
+  }
+
+  #opskriften {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+  }
+
+  .forklaring {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .linsebillede {
+    background-color: var(--purple);
+    margin: 0% 15%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .bruge {
+    width: 100%;
+    padding: 1% 10%;
+    border-right: 1px solid red;
+    border-color: var(--purple);
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore {
+    padding: 1% 8%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore p {
+    line-height:1.8;
+  }
+
+  .bruge p{
+    line-height:1.8;
+  }
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width:8%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 27%;
+    padding: 2% 10%;
+    font-size: 14px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* IPAD + */
+@media screen and (min-width: 812px) and (max-width: 1175px) {
+
+  .overskrift {
+    font-size: 20px;
+  }
+
+  #beskrivelse {
+  padding: 2% 15%;
+  }
+
+  #overskrift {
+    text-align: center;
+  }
+
+  .clock {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    }
+
+  .tid {
+    font-size: 14px;
+  }
+
+  .ur {
+    max-width: 35px;
+    margin-right: 2%;
+  }
+
+  #opskriften {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+  }
+
+  .forklaring {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid red;
+    border-top: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .linsebillede {
+    background-color: var(--purple);
+    margin: 0% 15%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    border: 1px solid red;
+    border-color: var(--purple);
+  }
+
+  .bruge {
+    width: 100%;
+    padding: 1% 10%;
+    border-right: 1px solid red;
+    border-color: var(--purple);
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore {
+    padding: 1% 8%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .goore p {
+    line-height: 2;
+  }
+
+  .bruge p{
+    line-height: 2;
+  }
+
+
+  footer {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo1 {
+    width:8%;
+  }
+
+  .footer {
+    display: flex;
+    flex-flow: row;
+  }
+
+  .some{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0% 10%;
+
+  }
+
+  .tilmeld {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: 27%;
+    padding: 2% 10%;
+    font-size: 20px;
+  }
+
+  .tilmeld a {
+    text-align: right;
+    text-decoration: none;
+  }
+
+  .tilmeld a:hover {
+    text-decoration: underline;
+  }
+}
